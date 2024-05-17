@@ -20,7 +20,8 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg.jpg") top right no-repeat;
+  background: #040404;
+  /* background: #040404 url("../img/black-painted-wall-textured-background.jpg") right no-repeat; */
   background-size: cover;
   left: 0;
   right: 0;
@@ -60,7 +61,7 @@ h6 {
 #header {
   transition: ease-in-out 0.3s;
   position: relative;
-  /* height: 100vh; */
+  height: 100vh;
   display: flex;
   align-items: center;
   z-index: 997;
@@ -114,7 +115,7 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);  
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   line-height: 1;
   margin-right: 8px;
@@ -358,7 +359,12 @@ section.section-show {
   opacity: 1;
   padding-bottom: 45px;
 }
-
+#about {
+  top: 100px;
+  bottom: auto;
+  opacity: 1;
+  padding-bottom: 45px;
+}
 section .container {
   background: rgba(0, 0, 0, 0.9);
   padding: 30px;
@@ -370,6 +376,9 @@ section .container {
   }
 
   section.section-show {
+    top: 80px;
+  }
+  #about {
     top: 80px;
   }
 }
