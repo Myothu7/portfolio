@@ -14,7 +14,7 @@
           <div class="info-box">
             <i class="bx bx-map"></i>
             <h3>My Address</h3>
-            <p>A108 Adam Street, New York, NY 535022</p>
+            <p>{{ about?.information?.address }}</p>
           </div>
         </div>
 
@@ -36,14 +36,14 @@
           <div class="info-box">
             <i class="bx bx-envelope"></i>
             <h3>Email Me</h3>
-            <p>contact@example.com</p>
+            <p>{{ about?.information?.email }}</p>
           </div>
         </div>
         <div class="col-md-6 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-phone-call"></i>
             <h3>Call Me</h3>
-            <p>+1 5589 55488 55</p>
+            <p>{{ about?.information?.phone }}</p>
           </div>
         </div>
       </div>
@@ -74,3 +74,28 @@
     </div>
   </section>
 </template>
+
+<script>
+import http from '../service/api.js'
+
+  export default {
+      data() {
+        return {
+          about :[]
+        }
+      },
+      methods: {
+        async fetchAbout() {
+          try {
+            const response = await http.getData('about.json');
+            this.about = response.data;
+          } catch (error) {
+            console.error('Error fetching items:', error);
+          }
+        }
+      },
+      created() {
+        this.fetchAbout();
+      }
+  }
+</script>

@@ -2,9 +2,7 @@
   <header id="header" :class="path == '/' ? '': 'header-top'">
     <div class="container">
       <h1 class="text-white">{{ data.name }}</h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      <!-- <h2 class="text-white">{{ data.content }}</h2> -->
+  
       <div v-html="data.content"></div>
 
       <nav id="navbar" class="navbar">
@@ -25,11 +23,10 @@
               </a>
             </li>
             <li>
-              <a class="nav-link" :class="path == '/service' ? 'active': ''">
-                <router-link :to="{name: 'service'}" class="text-decoration-none">Services</router-link>
+              <a class="nav-link" :class="path == '/services' ? 'active': ''">
+                <router-link :to="{name: 'services'}" class="text-decoration-none">Services</router-link>
               </a>
             </li>
-            <li><a class="nav-link" :class="path == '/portfolio' ? 'active': ''">Portfolio</a></li>
             <li>
               <a class="nav-link" :class="path == '/contact' ? 'active': ''">
                 <router-link :to="{name: 'contact'}" class="text-decoration-none">Contact</router-link> 
@@ -37,6 +34,7 @@
             </li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
+          <!-- navbar-mobile bi-list bi-x -->
       </nav><!-- .navbar -->
 
       <div class="social-links">
@@ -60,17 +58,22 @@ import http from '../service/api.js'
         }
       },
       methods: {
-        async fetchItems() {
+        async fetchHome() {
           try {
-            const response = await http.getItems('home.json');
+            const response = await http.getData('home.json');
             this.data = response.data;
           } catch (error) {
             console.error('Error fetching items:', error);
           }
         },
+        mobileToggle() {
+          return alert('hello');
+        }
       },
       created() {
-        this.fetchItems();
+        this.fetchHome();
       }
   }
+
+
 </script>

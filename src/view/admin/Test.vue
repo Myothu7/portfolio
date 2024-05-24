@@ -1,0 +1,59 @@
+<template>
+    <div class="container mt-5">
+      <h1>Hello</h1>
+    </div>
+</template>
+<script>
+import http from '../../service/api.js'
+
+  export default {
+      data() {
+        return {
+          about :[],
+          skill : []
+        }
+      },
+      methods: {
+        async createData() {
+          try {
+            const response = await http.createItem({
+              "data":[
+                {
+                  "id" : 1,
+                  "role" : "Web Developer",
+                  "title" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                  "birthday" : "1 May 1995",
+                  "age" : 31,
+                  "website" : "www.example.com",
+                  "phone" : "+123 456 7890",
+                  "city" : "New York, USA",
+                  "degree" : "Master",
+                  "email:" : "email@example.com",
+                  "freelance" : "Available",
+                  "content" : "Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.",
+                  "address" : "A108 Adam Street, New York, NY 535022"
+                }
+              ]
+            });
+            this.about = response.data;
+          } catch (error) {
+            console.error('Error fetching items:', error);
+          }
+        },
+        async fetchSkill() {
+          try {
+            const response = await http.getData('skill.json');
+            this.skill = response.data;
+          } catch (error) {
+            console.error('Error fetching items:', error);
+          }
+        },
+      },
+      created() {
+          this.createData();
+        // this.fetchAbout();
+        // this.fetchSkill();
+        // this.updateAbout();
+      }
+  }
+</script>

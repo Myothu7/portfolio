@@ -14,5 +14,7 @@ import axios from 'axios';
 import 'aos/dist/aos.css'; // Import AOS CSS
 import AOS from 'aos'; // Import AOS
 import 'boxicons/css/boxicons.min.css'; // Import Boxicons CSS
-createApp(App).use(router).mount('#app');
+
 AOS.init();
+
+createApp(App).use(router).mount('#app');

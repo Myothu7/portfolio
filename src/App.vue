@@ -1,6 +1,9 @@
 <template>
      <div>
-        <Header :path=" $route.fullPath "></Header>
+      <!-- v-if="!($route.fullPath.includes('admin'))" -->
+        <div>
+          <Header :path=" $route.fullPath "></Header>
+        </div>
         <router-view></router-view> 
      </div>
 </template>
@@ -19,5 +22,7 @@
 </script>
 
 <style>
-
+*{
+  color: white;
+}
 </style>

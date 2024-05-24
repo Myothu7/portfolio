@@ -8,17 +8,17 @@ const apiClient = axios.create({
 });
 
 export default {
-  getItems(url) {
+  getData(url) {
     return apiClient.get(url);
   },
   getItem(id) {
-    return apiClient.get(`/items/${id}`);
+    return apiClient.get(`/data/${id}`);
   },
   createItem(item) {
-    return apiClient.post('/items', item);
+    return apiClient.post('/about.json', item);
   },
-  updateItem(id, item) {
-    return apiClient.put(`/items/${id}`, item);
+  updateData(id,item) {
+    return apiClient.put(`/about.json/${id}`, item);
   },
   deleteItem(id) {
     return apiClient.delete(`/items/${id}`);
