@@ -99,7 +99,7 @@ import http from '../service/api.js'
             name : "", email : "" , message : ""
           },
           vaildateShow : false,
-          emailSuccess : true
+          emailSuccess : false
         }
       },
       computed:{
