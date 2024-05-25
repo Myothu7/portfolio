@@ -69,6 +69,7 @@ h6 {
   align-items: center;
   z-index: 997;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #header * {
@@ -308,7 +309,7 @@ h6 {
   bottom: 0;
   background: rgba(0, 0, 0, 0.9);
   transition: 0.3s;
-  z-index: 999;
+  z-index: 99999;
   margin-top: 0;
 }
 
@@ -333,6 +334,7 @@ h6 {
 
 .navbar-mobile li {
   padding: 12px 20px;
+  /* color:white; */
 }
 
 .navbar-mobile li+li {

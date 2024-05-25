@@ -1,6 +1,6 @@
 <template>
   <section id="services" class="services section-show" v data-aos="fade-up"
-     data-aos-duration="1000">
+     data-aos-duration="1000" v-if="!isloading">
     <div class="container">
 
       <div class="section-title">
@@ -8,7 +8,7 @@
         <p>My Services</p>
       </div>
 
-      <div class="row" v-show="!isloading">
+      <div class="row">
         <template  v-for="(val, index) in data" :key="index">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch g-3">
             <div class="icon-box">

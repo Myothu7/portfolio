@@ -1,39 +1,40 @@
 <template>
+
   <header id="header" :class="path == '/' ? '': 'header-top'">
     <div class="container">
       <h1 class="text-white">{{ data.name }}</h1>
   
       <div v-html="data.content"></div>
 
-      <nav id="navbar" class="navbar">
-          <ul>
+      <nav id="navbar" class="navbar" :class="[click ? navabr : '']">
+          <ul class="">
             <li>
-              <a class="nav-link" :class="path == '/' ? 'active': ''">
+              <a class="nav-link" :class="path == '/' ? 'active': ''" @click="click= false">
                 <router-link to="/" class="text-decoration-none">Home</router-link>
               </a>
             </li>
             <li>
-              <a class="nav-link" :class="path == '/about' ? 'active': ''"> 
+              <a class="nav-link" :class="path == '/about' ? 'active': ''" @click="click= false"> 
                 <router-link :to="{name: 'about'}" class="text-decoration-none">About</router-link>
               </a>
             </li>
             <li>
-              <a class="nav-link" :class="path == '/resume' ? 'active': ''">
+              <a class="nav-link" :class="path == '/resume' ? 'active': ''" @click="click= false">
                 <router-link :to="{name: 'resume'}" class="text-decoration-none">Resume</router-link>
               </a>
             </li>
             <li>
-              <a class="nav-link" :class="path == '/services' ? 'active': ''">
+              <a class="nav-link" :class="path == '/services' ? 'active': ''" @click="click= false">
                 <router-link :to="{name: 'services'}" class="text-decoration-none">Services</router-link>
               </a>
             </li>
             <li>
-              <a class="nav-link" :class="path == '/contact' ? 'active': ''">
+              <a class="nav-link" :class="path == '/contact' ? 'active': ''" @click="click= false">
                 <router-link :to="{name: 'contact'}" class="text-decoration-none">Contact</router-link> 
               </a>
             </li>
           </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
+          <i :class="[click ? 'bi-list bi-x':'bi bi-list']" class="mobile-nav-toggle" @click="mobileNavbar()"></i>
           <!-- navbar-mobile bi-list bi-x -->
       </nav><!-- .navbar -->
 
@@ -54,7 +55,9 @@ import http from '../service/api.js'
       props: ['path'],
       data() {
         return {
-          data :[]
+          data :[],
+          navabr : 'navbar-mobile top-0 position-fixed start-0 end-0 bottom-0',
+          click : false
         }
       },
       methods: {
@@ -66,8 +69,8 @@ import http from '../service/api.js'
             console.error('Error fetching items:', error);
           }
         },
-        mobileToggle() {
-          return alert('hello');
+        mobileNavbar() {
+          this.click = !this.click;
         }
       },
       created() {
