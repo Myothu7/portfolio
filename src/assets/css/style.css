@@ -35,6 +35,9 @@ body::before {
     background-attachment: fixed;
   }
 }
+.hover:hover {
+  cursor: pointer;
+}
 
 a {
   color: #18d26e;
@@ -1146,7 +1149,7 @@ section .container {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type=submit] {
+.send-email {
   background: #18d26e;
   border: 0;
   padding: 10px 30px;
@@ -1155,7 +1158,7 @@ section .container {
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.send-email:hover {
   background: #15bb62;
 }
 

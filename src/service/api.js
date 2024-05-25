@@ -22,5 +22,13 @@ export default {
   },
   deleteItem(id) {
     return apiClient.delete(`/items/${id}`);
+  },
+  email(data) {
+    return axios.post('https://api.emailjs.com/api/v1.0/email/send',{
+      service_id: 'service_wz5032n',
+      template_id: 'template_n1chi5i',
+      user_id: '4ZIjyo8lfHkFnL4LB',
+      template_params: data
+    });
   }
 };
