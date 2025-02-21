@@ -17,15 +17,15 @@
         <div class="col-lg-4" data-aos="fade-right">
           <img
             src="../assets/img/mmt.jpg"
-            class="img-fluid rounded opacity-75"
+            class="img-fluid rounded"
             alt=""
-            height="680"
-            width="600"
+            height="400"
+            width="650"
           />
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
           <h3>{{ about.role }}</h3>
-          <p class="fst-italic text-white">
+          <p class="fst-italic py-4 py-lg-0 text-white">
             {{ about.title }}
           </p>
           <div class="row">
