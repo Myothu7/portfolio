@@ -1,9 +1,19 @@
 {
-  "HTML" : "100%",
-  "CSS" : "80%",
-  "Php" : "70%",
-  "JavaScript" : "70%",
-  "Bootstrap" : "70%",
-  "Vue" : "60%",
-  "Laravel" : "80%"
+  "HTML": "100%",
+  "CSS": "80%",
+  "Php": "70%",
+  "JavaScript": "70%",
+  "Bootstrap": "70%",
+  "Tailwind CSS": "65%",
+  "Vue": "60%",
+  "Laravel": "80%",
+  "Python": "60%",
+  "React": "50%",
+  "Node.js": "50%",
+  "Git & Github": "80%",
+  "MongoDB": "50%",
+  "MySQL": "70%",
+  "SQLite": "50%",
+  "Server Basic Knowledge": "50%",
+  "Ubuntu OS": "70%"
 }
