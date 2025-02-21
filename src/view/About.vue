@@ -43,9 +43,9 @@
               </ul>
             </div>
           </div>
-          <p class="text-white">
+          <!-- <p class="text-white">
             {{ about.content }}
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
