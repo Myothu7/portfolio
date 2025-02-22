@@ -10,7 +10,7 @@
 
       <div class="row">
         <div class="col-lg-6">
-          <h3 class="resume-title">Sumary</h3>
+          <!-- <h3 class="resume-title">Sumary</h3>
           <div class="resume-item pb-0">
             <h4>Alice Barkley</h4>
             <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
@@ -21,20 +21,47 @@
               <li>alice.barkley@example.com</li>
             </ul>
             </p>
-          </div>
+          </div> -->
 
           <h3 class="resume-title">Education</h3>
           <div class="resume-item">
-            <h4>Master of Fine Arts &amp; Graphic Design</h4>
-            <h5>2015 - 2016</h5>
-            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-            <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+            <h4>Technology University ( 2015 - 2016 )</h4>
+            <ul class="mt-4">
+              <li>Information Technology ( Monywa )</li>
+              <li>VI-BE-IT-25 ( Final year, Expected at February 2021 )</li>
+            </ul>
           </div>
           <div class="resume-item">
-            <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-            <h5>2010 - 2014</h5>
-            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-            <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
+            <h4>Learning</h4>
+            <ul class="mt-4">
+              <li>Professional Web Developer ( Fairway Technology )</li>
+              <li>Diploma in Python Programming ( National Cyber City )</li>
+              <li>Js + React ( Turing Programming Training Center )</li>
+              <li>Self Study</li>
+            </ul>
+          </div>
+          <div class="resume-item">
+            <h4>PROFESSIONAL SKILL</h4>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="mt-4">
+                  <li>HTML, CSS</li>
+                  <li>Bootstrap 5, Tailwind CSS</li>
+                  <li>PHP, Python, JavaScript</li>
+                  <li>Laravel, Vue</li>
+                  <li>React and Node.js</li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="mt-4">
+                  <li>MongoDB, MySQL, SQLite</li>
+                  <li>Git & Github</li>
+                  <li>Server Basic Knowledge</li>
+                  <li>Ubuntu OS</li>
+                </ul>
+              </div>
+            </div>
+            
           </div>
         </div>
         <div class="col-lg-6">
@@ -50,6 +77,15 @@
               <li>{{ data?.content }}</li>
             </ul>
             </p>
+
+            <p>Websites ******************</p>
+            <p>
+              <ul>
+                <li v-for="(website, index) in websites.links" :key="index">
+                  <a :href="website.url" target="_blank" class="text-decoration-none">{{ website.name }}</a>
+                </li>
+              </ul>
+            </p>
           </div>
           
         </div>
@@ -64,10 +100,12 @@ import http from "../service/api.js";
 
 export default {
   data() {
-    return {
-      services: [],
-    };
-  },
+  return {
+    services: [],
+    websites: []
+  }
+},
+
   methods: {
     async fetchServices() {
       try {
@@ -76,10 +114,19 @@ export default {
       } catch (error) {
         console.error("Error fetching items:", error);
       }
+    },
+    async fetchWebsites() {
+      try {
+        const response = await http.getData("website.json");
+        this.websites = response.data;
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      }
     }
   },
   created() {
     this.fetchServices();
+    this.fetchWebsites();
   },
 };
 </script>
