@@ -111,6 +111,7 @@ export default {
       try {
         const response = await http.getData("service.json");
         this.services = response.data;
+        console.log(this.services);
       } catch (error) {
         console.error("Error fetching items:", error);
       }
@@ -119,6 +120,7 @@ export default {
       try {
         const response = await http.getData("website.json");
         this.websites = response.data;
+        console.log(this.websites);
       } catch (error) {
         console.error("Error fetching items:", error);
       }

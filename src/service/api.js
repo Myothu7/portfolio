@@ -1,7 +1,18 @@
 import axios from "axios";
 
+// const apiClient = axios.create({
+//   baseURL: "http://localhost:5173/src/db/",
+//   // baseURL: "https://myominthu.vercel.app/src/db/",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+// });
+
 const apiClient = axios.create({
-  baseURL: "https://myominthu.vercel.app/src/db",
+  baseURL:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:5173/src/db/"
+      : "https://myominthu.vercel.app/src/db/",
   headers: {
     "Content-Type": "application/json",
   },
