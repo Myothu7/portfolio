@@ -282,7 +282,7 @@
   </section>
 </template>
 
-<script>
+<!-- <script>
 import http from "../service/api.js";
 
 export default {
@@ -327,4 +327,55 @@ export default {
     this.fetchInterests();
   },
 };
+</script> -->
+
+<script setup>
+import { reactive } from "vue";
+
+const about = reactive({
+  role: "Web Developer",
+  title:
+    "Dedicated web developer with 2 years of experience in creating dynamic and responsive websites. Proficient in front-end and back-end development, with expertise in modern frameworks and technologies to deliver high-quality web solutions.",
+
+  information: {
+    birthday: "1 June 1997",
+    website: "myominthu.vercel.app",
+    phone: "+959968032199",
+    city: "Yangon, Myanmar",
+    degree: "Information Technology",
+    email: "itstudent55530@gmail.com",
+    freelance: "Available",
+    address: "Nat Sin Street, Kyimyintine Township",
+  },
+});
+
+const skill = reactive({
+  HTML: "100%",
+  CSS: "80%",
+  Php: "70%",
+  JavaScript: "70%",
+  Bootstrap: "80%",
+  "Tailwind CSS": "80%",
+  Vue: "80%",
+  Laravel: "80%",
+  Python: "60%",
+  React: "60%",
+  "Node.js": "60%",
+  "Git & Github": "80%",
+  MongoDB: "60%",
+  MySQL: "80%",
+  SQLite: "60%",
+  "Server Knowledge": "50%",
+  "Ubuntu OS": "60%",
+});
+
+const interests = reactive({
+  0: "Music",
+  1: "Football",
+  2: "Game",
+  3: "Travel",
+  4: "Reading",
+  5: "Thinking",
+  6: "Cooking",
+});
 </script>

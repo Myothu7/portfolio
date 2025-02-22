@@ -38,7 +38,7 @@
     </div>
   </section>
 </template>
-<script>
+<!-- <script>
 import http from "../service/api.js";
 
 export default {
@@ -63,4 +63,32 @@ export default {
     this.fetchService();
   },
 };
+</script> -->
+
+<script setup>
+import { reactive } from "vue";
+
+const data = reactive({
+  0: {
+    name: "Library Management System as Main PIC",
+    title:
+      "Developed and maintained a libray management system to enhance user engagement and provide accessible, interactive educational content.",
+    content:
+      "Collaborated with a team to implement user-friendly features, such as course modules, progress tracking, and quizzes, to improve learning outcomes.",
+  },
+  1: {
+    name: "Training Management System as Second PIC",
+    title:
+      "Served as the second person in charge, collaborating closely on both front-end and back-end development of a Training Management System to enhance course scheduling, participant tracking, and reporting.",
+    content:
+      "Contributed to the design and implementation of user-friendly interfaces, ensuring a seamless experience for trainers and trainess.",
+  },
+  2: {
+    name: "Online Learning Platform as Second PIC",
+    title:
+      "Collaborated with a team to implement user-friendly features, such as course modules, progress tracking, and quizzes, to improve learning outcomes.",
+    content:
+      "Developed and maintained a learning platform to enchance user engagement and provide accessible, interactive educational content.",
+  },
+});
 </script>

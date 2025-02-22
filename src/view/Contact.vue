@@ -1,10 +1,17 @@
 <template>
-   <section id="contact" class="contact section-show" v data-aos="fade-up"
-     data-aos-duration="1000">
+  <section
+    id="contact"
+    class="contact section-show"
+    v
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
     <div v-if="emailSuccess" class="d-flex position-fixed end-0 top-0">
       <div class="row bg-white p-3 me-2 position-relative d-flex">
         <span @click="emailSuccess = false" class="hover">
-          <i class="bi bi-x-lg text-dark position-absolute top-0 end-0 me-1"></i>
+          <i
+            class="bi bi-x-lg text-dark position-absolute top-0 end-0 me-1"
+          ></i>
         </span>
         <div>
           <i class="bi bi-envelope-at text-dark me-2"></i>
@@ -14,14 +21,12 @@
     </div>
 
     <div class="container">
-
       <div class="section-title">
         <h2>Contact</h2>
         <p>Contact Me</p>
       </div>
 
       <div class="row mt-2">
-
         <div class="col-md-6 d-flex align-items-stretch">
           <div class="info-box">
             <i class="bx bx-map"></i>
@@ -62,17 +67,56 @@
       <div role="form" class="php-email-form mt-4">
         <div class="row">
           <div class="col-md-6 form-group">
-            <input v-model="formData.name" type="text" name="name" class="form-control"  placeholder="Your Name" 
-            :class="[vaildateShow ? (formData.name == '' ? 'border border-danger' : '') : '']" required>
+            <input
+              v-model="formData.name"
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Your Name"
+              :class="[
+                vaildateShow
+                  ? formData.name == ''
+                    ? 'border border-danger'
+                    : ''
+                  : '',
+              ]"
+              required
+            />
           </div>
           <div class="col-md-6 form-group mt-3 mt-md-0">
-            <input v-model="formData.email" type="email" class="form-control" name="email"  placeholder="Your Email" 
-            :class="[vaildateShow ? (formData.email == '' ? 'border border-danger' : '') : '']" required>
+            <input
+              v-model="formData.email"
+              type="email"
+              class="form-control"
+              name="email"
+              placeholder="Your Email"
+              :class="[
+                vaildateShow
+                  ? formData.email == ''
+                    ? 'border border-danger'
+                    : ''
+                  : '',
+              ]"
+              required
+            />
           </div>
         </div>
         <div class="form-group mt-3">
-          <textarea v-model="formData.message" class="form-control" name="message" rows="5" placeholder="Message"
-          :class="[vaildateShow ? (formData.message == '' ? 'border border-danger' : '') : '']" required></textarea>
+          <textarea
+            v-model="formData.message"
+            class="form-control"
+            name="message"
+            rows="5"
+            placeholder="Message"
+            :class="[
+              vaildateShow
+                ? formData.message == ''
+                  ? 'border border-danger'
+                  : ''
+                : '',
+            ]"
+            required
+          ></textarea>
         </div>
         <div class="my-3">
           <div class="loading">Loading</div>
@@ -83,12 +127,11 @@
           <button @click="sendEmail()" class="send-email">Send Message</button>
         </div>
       </div>
-
     </div>
   </section>
 </template>
 
-<script>
+<!-- <script>
 import http from '../service/api.js'
 
   export default {
@@ -147,4 +190,29 @@ import http from '../service/api.js'
         this.fetchAbout();
       }
   }
+</script> -->
+
+<script setup>
+import { reactive } from "vue";
+const about = reactive({
+  role: "Web Developer",
+  title:
+    "Dedicated web developer with 2 years of experience in creating dynamic and responsive websites. Proficient in front-end and back-end development, with expertise in modern frameworks and technologies to deliver high-quality web solutions.",
+
+  information: {
+    birthday: "1 June 1997",
+    website: "myominthu.vercel.app",
+    phone: "+959968032199",
+    city: "Yangon, Myanmar",
+    degree: "Information Technology",
+    email: "itstudent55530@gmail.com",
+    freelance: "Available",
+    address: "Nat Sin Street, Kyimyintine Township",
+  },
+});
+
+const formData = reactive({
+  email: "",
+  message: "",
+});
 </script>
