@@ -40,34 +40,46 @@
         <div class="col-lg-6">
           <h3 class="resume-title">Professional Experience</h3>
           <div class="resume-item">
-            <h4>Senior graphic design specialist</h4>
-            <h5>2019 - Present</h5>
-            <p><em>Experion, New York, NY </em></p>
-            <p>
+            <h4>Web Developer ( mid-level )</h4>
+            <h5>2023 - Present at UMG Myanmar</h5>
+            <p>Applications ******************</p>
+            <p v-for="(data, index) in services" :key="index">
+              <h5>{{ data?.name }}</h5>
             <ul>
-              <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-              <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-              <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-              <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+              <li>{{ data?.title }}</li>
+              <li>{{ data?.content }}</li>
             </ul>
             </p>
           </div>
-          <div class="resume-item">
-            <h4>Graphic design specialist</h4>
-            <h5>2017 - 2018</h5>
-            <p><em>Stepping Stone Advertising, New York, NY</em></p>
-            <p>
-            <ul>
-              <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-              <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-              <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-              <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-            </ul>
-            </p>
-          </div>
+          
         </div>
       </div>
 
     </div>
   </section><!-- End Resume Section -->
 </template>
+
+<script>
+import http from "../service/api.js";
+
+export default {
+  data() {
+    return {
+      services: [],
+    };
+  },
+  methods: {
+    async fetchServices() {
+      try {
+        const response = await http.getData("service.json");
+        this.services = response.data;
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      }
+    }
+  },
+  created() {
+    this.fetchServices();
+  },
+};
+</script>
