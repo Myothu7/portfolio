@@ -294,31 +294,31 @@ export default {
     };
   },
   methods: {
-    async fetchAbout() {
-      try {
-        const response = await http.getData("about.json");
-        this.about = response.data;
-        console.log(url);
-      } catch (error) {
-        console.error("Error fetching items:", error);
-      }
-    },
+    // async fetchAbout() {
+    //   try {
+    //     const response = await http.getData("about.json");
+    //     this.about = response.data;
+    //     console.log(url);
+    //   } catch (error) {
+    //     console.error("Error fetching items:", error);
+    //   }
+    // },
     async fetchSkill() {
       try {
-        const response = await http.getData("skills.json");
+        const response = await http.get("skills.json");
         this.skill = response.data;
       } catch (error) {
         console.error("Error fetching items:", error);
       }
     },
-    async fetchInterests() {
-      try {
-        const response = await http.getData("interests.json");
-        this.interests = response.data;
-      } catch (error) {
-        console.error("Error fetching items:", error);
-      }
-    },
+    // async fetchInterests() {
+    //   try {
+    //     const response = await http.getData("interests.json");
+    //     this.interests = response.data;
+    //   } catch (error) {
+    //     console.error("Error fetching items:", error);
+    //   }
+    // },
   },
   created() {
     this.fetchAbout();
