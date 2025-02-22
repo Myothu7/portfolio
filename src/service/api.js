@@ -2,7 +2,8 @@ import axios from "axios";
 
 const apiClient = axios.create({
   // baseURL: "http://localhost:5173/src/db/",
-  baseURL: "https://myominthu.netlify.app/src/db/",
+  // baseURL: "https://myominthu.netlify.app/portfolio/src/db/",
+  baseURL: "https://myominthu.vercel.app/portfolio/src/db/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
