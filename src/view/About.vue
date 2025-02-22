@@ -283,7 +283,7 @@
 </template>
 
 <script>
-import http from "../service/api.js";
+import https from "../service/api.js";
 
 export default {
   data() {
@@ -304,7 +304,7 @@ export default {
     },
     async fetchSkill() {
       try {
-        const response = await http.getData("skills.json");
+        const response = await https.getData("skills.json");
         this.skill = response.data;
       } catch (error) {
         console.error("Error fetching items:", error);
@@ -312,7 +312,7 @@ export default {
     },
     async fetchInterests() {
       try {
-        const response = await http.getData("interests.json");
+        const response = await https.getData("interests.json");
         this.interests = response.data;
       } catch (error) {
         console.error("Error fetching items:", error);
