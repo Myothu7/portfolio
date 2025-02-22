@@ -160,7 +160,7 @@
     <!-- End Interests -->
 
     <!-- ======= Testimonials ======= -->
-    <div class="testimonials container">
+    <!-- <div class="testimonials container">
       <div class="section-title">
         <h2>Testimonials</h2>
       </div>
@@ -180,12 +180,16 @@
                 eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
-              <!-- <img src="../assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
+              <img
+                src="../assets/img/testimonials/testimonials-1.jpg"
+                class="testimonial-img"
+                alt=""
+              />
               <h3>Saul Goodman</h3>
               <h4>Ceo &amp; Founder</h4>
             </div>
           </div>
-          <!-- End testimonial item -->
+          End testimonial item
 
           <div class="swiper-slide">
             <div class="testimonial-item">
@@ -196,12 +200,16 @@
                 velit sunt aliqua noster fugiat irure amet legam anim culpa.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
-              <!-- <img src="../assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt=""> -->
+              <img
+                src="../assets/img/testimonials/testimonials-2.jpg"
+                class="testimonial-img"
+                alt=""
+              />
               <h3>Sara Wilsson</h3>
               <h4>Designer</h4>
             </div>
           </div>
-          <!-- End testimonial item -->
+          End testimonial item
 
           <div class="swiper-slide">
             <div class="testimonial-item">
@@ -212,12 +220,16 @@
                 noster aute amet eram fore quis sint minim.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
-              <!-- <img src="../assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt=""> -->
+              <img
+                src="../assets/img/testimonials/testimonials-3.jpg"
+                class="testimonial-img"
+                alt=""
+              />
               <h3>Jena Karlis</h3>
               <h4>Store Owner</h4>
             </div>
           </div>
-          <!-- End testimonial item -->
+          End testimonial item
 
           <div class="swiper-slide">
             <div class="testimonial-item">
@@ -229,12 +241,16 @@
                 veniam.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
-              <!-- <img src="../assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt=""> -->
+              <img
+                src="../assets/img/testimonials/testimonials-4.jpg"
+                class="testimonial-img"
+                alt=""
+              />
               <h3>Matt Brandon</h3>
               <h4>Freelancer</h4>
             </div>
           </div>
-          <!-- End testimonial item -->
+          End testimonial item
 
           <div class="swiper-slide">
             <div class="testimonial-item">
@@ -246,18 +262,22 @@
                 cillum quid.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
-              <!-- <img src="../assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt=""> -->
+              <img
+                src="../assets/img/testimonials/testimonials-5.jpg"
+                class="testimonial-img"
+                alt=""
+              />
               <h3>John Larson</h3>
               <h4>Entrepreneur</h4>
             </div>
           </div>
-          <!-- End testimonial item -->
+          End testimonial item
         </div>
         <div class="swiper-pagination"></div>
       </div>
 
       <div class="owl-carousel testimonials-carousel"></div>
-    </div>
+    </div> -->
     <!-- End Testimonials  -->
   </section>
 </template>
