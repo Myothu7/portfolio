@@ -282,7 +282,7 @@
   </section>
 </template>
 
-<!-- <script>
+<script>
 import http from "../service/api.js";
 
 export default {
@@ -327,9 +327,9 @@ export default {
     this.fetchInterests();
   },
 };
-</script> -->
+</script>
 
-<script setup>
+<!-- <script setup>
 import { reactive } from "vue";
 
 const about = reactive({
@@ -378,4 +378,4 @@ const interests = reactive({
   5: "Thinking",
   6: "Cooking",
 });
-</script>
+</script> -->

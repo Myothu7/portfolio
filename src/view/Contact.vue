@@ -131,68 +131,76 @@
   </section>
 </template>
 
-<!-- <script>
-import http from '../service/api.js'
+<script>
+import http from "../service/api.js";
 
-  export default {
-      data() {
-        return {
-          about :[],
-          formData : {
-            name : "", email : "" , message : ""
-          },
-          vaildateShow : false,
-          emailSuccess : false
-        }
+export default {
+  data() {
+    return {
+      about: [],
+      formData: {
+        name: "",
+        email: "",
+        message: "",
       },
-      computed:{
-        showValidate(data) {
-          return data != "" ? true : false; 
-        },
-      },
-      methods: {
-        validate() {
-          if((this.formData.name == '') || (this.formData.email == '') || (this.formData.message == '')){
-            return false;
-          }else{
-          return true;
-          }
-        },
-        async fetchAbout() {
-          try {
-            const response = await http.getData('about.json');
-            this.about = response.data;
-          } catch (error) {
-            console.error('Error fetching items:', error);
-          }
-        },
-        async sendEmail() {
-          this.vaildateShow = true;
-          if(this.validate()) {
-              this.formData.name = '',this.formData.email = '', this.formData.message = ''
-              this.vaildateShow = false
-              try{
-                const data = {
-                  'name' : this.formData.name,
-                  'email' : this.formData.email,
-                  'message' : this.formData.message
-                };
-                const response = await http.email(data);
-                this.emailSuccess = true;
-              }catch (error) {
-                console.error('Error fetching items:', error);
-                this.emailSuccess = false;
-              }
-          }
-        }
-      },
-      created() {
-        this.fetchAbout();
+      vaildateShow: false,
+      emailSuccess: false,
+    };
+  },
+  computed: {
+    showValidate(data) {
+      return data != "" ? true : false;
+    },
+  },
+  methods: {
+    validate() {
+      if (
+        this.formData.name == "" ||
+        this.formData.email == "" ||
+        this.formData.message == ""
+      ) {
+        return false;
+      } else {
+        return true;
       }
-  }
-</script> -->
+    },
+    async fetchAbout() {
+      try {
+        const response = await http.getData("about.json");
+        this.about = response.data;
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      }
+    },
+    async sendEmail() {
+      this.vaildateShow = true;
+      if (this.validate()) {
+        (this.formData.name = ""),
+          (this.formData.email = ""),
+          (this.formData.message = "");
+        this.vaildateShow = false;
+        try {
+          const data = {
+            name: this.formData.name,
+            email: this.formData.email,
+            message: this.formData.message,
+          };
+          const response = await http.email(data);
+          this.emailSuccess = true;
+        } catch (error) {
+          console.error("Error fetching items:", error);
+          this.emailSuccess = false;
+        }
+      }
+    },
+  },
+  created() {
+    this.fetchAbout();
+  },
+};
+</script>
 
-<script setup>
+<!-- <script setup>
 import { reactive } from "vue";
 const about = reactive({
   role: "Web Developer",
@@ -215,4 +223,4 @@ const formData = reactive({
   email: "",
   message: "",
 });
-</script>
+</script> -->

@@ -38,7 +38,7 @@
     </div>
   </section>
 </template>
-<!-- <script>
+<script>
 import http from "../service/api.js";
 
 export default {
@@ -63,9 +63,9 @@ export default {
     this.fetchService();
   },
 };
-</script> -->
+</script>
 
-<script setup>
+<!-- <script setup>
 import { reactive } from "vue";
 
 const data = reactive({
@@ -91,4 +91,4 @@ const data = reactive({
       "Developed and maintained a learning platform to enchance user engagement and provide accessible, interactive educational content.",
   },
 });
-</script>
+</script> -->

@@ -95,7 +95,7 @@
   </section><!-- End Resume Section -->
 </template>
 
-<!-- <script>
+<script>
 import http from "../service/api.js";
 
 export default {
@@ -131,9 +131,9 @@ export default {
     this.fetchWebsites();
   },
 };
-</script> -->
+</script>
 
-<script setup>
+<!-- <script setup>
 import { reactive } from 'vue';
 
 const services = reactive({
@@ -174,4 +174,4 @@ const websites = reactive({
     }
   ]
 })
-</script>
+</script> -->
